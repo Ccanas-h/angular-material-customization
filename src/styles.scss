@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Con esto podemos usar los elementos de angular material, incluso sus diferentes paletas. Aca la lista:
+@use '@angular/material' as mat; 
+//   $red-palette, $pink-palette, $indigo-palette,
+//   $purple-palette, $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette,
+//   $teal-palette, $green-palette, $light-green-palette, $lime-palette, $yellow-palette,
+//   $amber-palette, $orange-palette, $deep-orange-palette, $brown-palette, $grey-palette,
+//   $gray-palette, $blue-grey-palette, $blue-gray-palette, $light-theme-background-palette,
+//   $dark-theme-background-palette, $light-theme-foreground-palette, $dark-theme-foreground-palette;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// @include mat.core(); Revisar
+
+$my-custom-primary: (
+    50: #e7f6e9,
+    100: #c5e9ca,
+    200: #9fdaa8,
+    300: #76cd85,
+    400: #56c26a,
+    500: #32b64f,
+    600: #28a746,
+    700: #1a953a,
+    800: #0a842f,
+    900: #00641b,
+    contrast: (
+        50: #000,
+        100: #000,
+        200: #000,
+        300: #fff,
+        400: #fff, 
+        500: #fff,
+        600: #fff
+    ),
+);
+
+$custom-typography: mat.define-typography-config(
+    $font-family: "Roboto, sans-serif",
+);
+$custom-primary: mat.define-palette($my-custom-primary);
+$custom-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+$custom-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $custom-primary,
+            accent: $custom-accent,
+            warn: $custom-warn,
+        ),
+        typography: $custom-typography,
+    )
+);
+
+@include mat.all-component-themes($custom-theme);

@@ -1,27 +1,14 @@
-# Ztesting
+### Customización de Angular Material 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Proyecto con Angular 17 y scss.
+- Angular Material Version 17.3.6
+- https://material.angular.io/guide/getting-started
+- Habilitar el modulo de animacion en el appConfig.ts. Como el proyecto fue creado Standalone, no tiene ngModules sino un appConfig.ts y desde aqui es solo agregar lo siguiente. 
+	* Step 1: Enabling the animations module
+Import provideAnimations from @angular/platform-browser/animations and add it to the providers list in the bootstrapApplication function call.
+	* Solo se debe agregar el  provideAnimations() 
+- Luego se debe importar el style.scss en Angular json dentro de ambos arrays de "styles []"
+- Aplicar esto en style.scss https://material.angular.io/guide/theming 
+	*  Explicaciones en comentarios de style.scss
+- Para la customizacion de colores se puede agregar nuevos "$custom-palettes:" y obtener la paleta completa de colores en el siguiente link. 
+	*  https://m1.material.io/style/color.html#color-color-palette
